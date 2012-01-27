@@ -4,12 +4,12 @@
 Summary:	Binary-based efficient data interchange format
 Summary(pl.UTF-8):	Binarny efektywny format wymiany danych.
 Name:		python-%{module}
-Version:	0.1.10
+Version:	0.1.12
 Release:	1
 License:	ASL
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/m/msgpack-python/msgpack-python-%{version}.tar.gz
-# Source0-md5:	a31f16d20ea8ec79cc8cba1103f951d8
+# Source0-md5:	121a203e961b566f2039f527f3556a5d
 URL:		http://msgpack.org/
 BuildRequires:	python-devel
 BuildRequires:	rpm-pythonprov
