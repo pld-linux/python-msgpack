@@ -10,7 +10,7 @@ Summary:	Binary-based efficient data interchange format
 Summary(pl.UTF-8):	Binarny efektywny format wymiany danych.
 Name:		python-%{module}
 Version:	0.4.5
-Release:	3
+Release:	4
 License:	ASL
 Group:		Development/Languages/Python
 Source0:	http://pypi.python.org/packages/source/m/msgpack-python/msgpack-python-%{version}.tar.gz
