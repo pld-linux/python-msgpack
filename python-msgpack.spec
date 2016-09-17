@@ -17,6 +17,7 @@ Group:		Development/Languages/Python
 Source0:	https://files.pythonhosted.org/packages/source/m/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
 # Source0-md5:	dcd854fb41ee7584ebbf35e049e6be98
 URL:		http://msgpack.org/
+BuildRequires:	libstdc++-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
