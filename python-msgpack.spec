@@ -1,23 +1,23 @@
 #
 # Conditional build:
-## %bcond_with	doc		# don't build doc
+%bcond_with	doc		# don't build doc
 %bcond_without	tests	# do not perform "make test"
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
 %define 	module	msgpack
+%define		pypi_name	msgpack-python
 Summary:	Binary-based efficient data interchange format
 Summary(pl.UTF-8):	Binarny efektywny format wymiany danych.
 Name:		python-%{module}
-Version:	0.4.5
-Release:	4
+Version:	0.4.8
+Release:	1
 License:	ASL
 Group:		Development/Languages/Python
-Source0:	http://pypi.python.org/packages/source/m/msgpack-python/msgpack-python-%{version}.tar.gz
-# Source0-md5:	3b82bc542d5599896695512e7c32f42d
+Source0:	https://files.pythonhosted.org/packages/source/m/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
+# Source0-md5:	dcd854fb41ee7584ebbf35e049e6be98
 URL:		http://msgpack.org/
 BuildRequires:	rpm-pythonprov
-# if py_postclean is used
 BuildRequires:	rpmbuild(macros) >= 1.710
 %if %{with python2}
 BuildRequires:	python-devel
@@ -29,7 +29,6 @@ BuildRequires:	python3-distribute
 BuildRequires:	python3-modules
 %endif
 Requires:	python-modules
-
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -43,8 +42,8 @@ Pozwala wymieniać strukturalne obiekty pomiędzy wieloma językami
 podobnie jak JSON. W odróżnieniu jest bardzo szybka i mała.
 
 %package -n python3-%{module}
-Summary:	-
-Summary(pl.UTF-8):	-
+Summary:	Binary-based efficient data interchange format
+Summary(pl.UTF-8):	Binarny efektywny format wymiany danych.
 Group:		Libraries/Python
 Requires:	python3-modules
 
@@ -89,10 +88,8 @@ rm -rf _build/html/_sources
 
 %install
 rm -rf $RPM_BUILD_ROOT
-
 %if %{with python2}
 %py_install
-
 %py_postclean
 %endif
 
@@ -111,9 +108,7 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitedir}/%{module}/*.py[co]
 %attr(755,root,root) %{py_sitedir}/%{module}/_packer.so
 %attr(755,root,root) %{py_sitedir}/%{module}/_unpacker.so
-%if "%{py_ver}" > "2.4"
 %{py_sitedir}/msgpack_python-%{version}-py*.egg-info
-%endif
 %endif
 
 %if %{with python3}
