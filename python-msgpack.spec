@@ -11,7 +11,7 @@ Summary:	Binary-based efficient data interchange format
 Summary(pl.UTF-8):	Binarny efektywny format wymiany danych.
 Name:		python-%{module}
 Version:	0.4.8
-Release:	1
+Release:	2
 License:	ASL
 Group:		Development/Languages/Python
 Source0:	https://files.pythonhosted.org/packages/source/m/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
