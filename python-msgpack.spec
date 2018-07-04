@@ -10,12 +10,12 @@
 Summary:	Binary-based efficient data interchange format
 Summary(pl.UTF-8):	Binarny efektywny format wymiany danych.
 Name:		python-%{module}
-Version:	0.4.8
-Release:	3
+Version:	0.5.6
+Release:	1
 License:	ASL
 Group:		Development/Languages/Python
-Source0:	https://files.pythonhosted.org/packages/source/m/%{pypi_name}/%{pypi_name}-%{version}.tar.gz
-# Source0-md5:	dcd854fb41ee7584ebbf35e049e6be98
+Source0:	https://pypi.debian.net/msgpack/%{module}-%{version}.tar.gz
+# Source0-md5:	9dfceb24c6e4e7de032687ee5a7ef4d6
 URL:		http://msgpack.org/
 BuildRequires:	libstdc++-devel
 BuildRequires:	rpm-pythonprov
@@ -70,7 +70,7 @@ API documentation for %{module}.
 Dokumentacja API %{module}.
 
 %prep
-%setup -q -n msgpack-python-%{version}
+%setup -q -n %{module}-%{version}
 
 %build
 %if %{with python2}
@@ -109,7 +109,7 @@ rm -rf $RPM_BUILD_ROOT
 %{py_sitedir}/%{module}/*.py[co]
 %attr(755,root,root) %{py_sitedir}/%{module}/_packer.so
 %attr(755,root,root) %{py_sitedir}/%{module}/_unpacker.so
-%{py_sitedir}/msgpack_python-%{version}-py*.egg-info
+%{py_sitedir}/msgpack-%{version}-py*.egg-info
 %endif
 
 %if %{with python3}
@@ -121,7 +121,7 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{py3_sitedir}/%{module}/_unpacker.cpython-*.so
 %{py3_sitedir}/%{module}/*.py
 %{py3_sitedir}/%{module}/__pycache__
-%{py3_sitedir}/msgpack_python-%{version}-py*.egg-info
+%{py3_sitedir}/msgpack-%{version}-py*.egg-info
 %endif
 
 %if %{with doc}
