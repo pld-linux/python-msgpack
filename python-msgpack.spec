@@ -5,17 +5,17 @@
 %bcond_without	python2 # CPython 2.x module
 %bcond_without	python3 # CPython 3.x module
 
-%define 	module	msgpack
+%define		module	msgpack
 %define		pypi_name	msgpack-python
 Summary:	Binary-based efficient data interchange format
 Summary(pl.UTF-8):	Binarny efektywny format wymiany danych.
 Name:		python-%{module}
-Version:	0.5.6
-Release:	3
+Version:	1.0.0
+Release:	1
 License:	ASL
 Group:		Development/Languages/Python
 Source0:	https://pypi.debian.net/msgpack/%{module}-%{version}.tar.gz
-# Source0-md5:	9dfceb24c6e4e7de032687ee5a7ef4d6
+# Source0-md5:	c35ee8f991dad3969884e9585e56ebba
 URL:		http://msgpack.org/
 BuildRequires:	libstdc++-devel
 BuildRequires:	rpm-pythonprov
@@ -104,21 +104,18 @@ rm -rf $RPM_BUILD_ROOT
 %if %{with python2}
 %files
 %defattr(644,root,root,755)
-%doc COPYING README.rst
-%dir %{py_sitedir}/%{module}
-%{py_sitedir}/%{module}/*.py[co]
-%attr(755,root,root) %{py_sitedir}/%{module}/_packer.so
-%attr(755,root,root) %{py_sitedir}/%{module}/_unpacker.so
-%{py_sitedir}/msgpack-%{version}-py*.egg-info
+%doc COPYING README.md
+%dir %{py_sitescriptdir}/%{module}
+%{py_sitescriptdir}/%{module}/*.py[co]
+%{py_sitescriptdir}/msgpack-%{version}-py*.egg-info
 %endif
 
 %if %{with python3}
 %files -n python3-%{module}
 %defattr(644,root,root,755)
-%doc COPYING README.rst
+%doc COPYING README.md
 %dir %{py3_sitedir}/%{module}
-%attr(755,root,root) %{py3_sitedir}/%{module}/_packer.cpython-*.so
-%attr(755,root,root) %{py3_sitedir}/%{module}/_unpacker.cpython-*.so
+%attr(755,root,root) %{py3_sitedir}/%{module}/_cmsgpack.cpython-*.so
 %{py3_sitedir}/%{module}/*.py
 %{py3_sitedir}/%{module}/__pycache__
 %{py3_sitedir}/msgpack-%{version}-py*.egg-info
