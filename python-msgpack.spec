@@ -10,7 +10,7 @@ Summary:	Binary-based efficient data interchange format
 Summary(pl.UTF-8):	Binarny, efektywny format wymiany danych
 Name:		python-%{module}
 Version:	1.0.0
-Release:	3
+Release:	4
 License:	Apache v2.0
 Group:		Development/Languages/Python
 Source0:	https://pypi.debian.net/msgpack/%{module}-%{version}.tar.gz
