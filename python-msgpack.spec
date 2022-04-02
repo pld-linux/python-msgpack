@@ -24,6 +24,7 @@ BuildRequires:	python-modules >= 1:2.7
 BuildRequires:	python-setuptools
 %endif
 %if %{with python3}
+BuildRequires:	python3-Cython
 BuildRequires:	python3-devel >= 1:3.5
 BuildRequires:	python3-modules
 BuildRequires:	python3-setuptools
@@ -72,6 +73,7 @@ szybka i mała.
 %endif
 
 %if %{with python3}
+/usr/bin/cython3 --cplus msgpack/_cmsgpack.pyx
 %py3_build
 
 %if %{with tests}
