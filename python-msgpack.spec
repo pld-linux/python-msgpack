@@ -9,12 +9,13 @@
 Summary:	Binary-based efficient data interchange format
 Summary(pl.UTF-8):	Binarny, efektywny format wymiany danych
 Name:		python-%{module}
-Version:	1.0.0
-Release:	6
+# keep 1.0.2 here for python2 support
+Version:	1.0.2
+Release:	1
 License:	Apache v2.0
 Group:		Development/Languages/Python
-Source0:	https://pypi.debian.net/msgpack/%{module}-%{version}.tar.gz
-# Source0-md5:	c35ee8f991dad3969884e9585e56ebba
+Source0:	https://files.pythonhosted.org/packages/source/m/msgpack/%{module}-%{version}.tar.gz
+# Source0-md5:	68d5804254642905ba87ede509e68970
 URL:		http://msgpack.org/
 BuildRequires:	libstdc++-devel
 BuildRequires:	rpm-pythonprov
@@ -22,12 +23,18 @@ BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.7
 BuildRequires:	python-setuptools
+%if %{with tests}
+BuildRequires:	python-pytest
+%endif
 %endif
 %if %{with python3}
 BuildRequires:	python3-Cython
 BuildRequires:	python3-devel >= 1:3.5
 BuildRequires:	python3-modules
 BuildRequires:	python3-setuptools
+%if %{with tests}
+BuildRequires:	python3-pytest
+%endif
 %endif
 Requires:	python-modules >= 1:2.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -68,6 +75,7 @@ szybka i mała.
 %py_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python} -m pytest test
 %endif
 %endif
@@ -77,6 +85,7 @@ szybka i mała.
 %py3_build
 
 %if %{with tests}
+PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
 %{__python3} -m pytest test
 %endif
 %endif
