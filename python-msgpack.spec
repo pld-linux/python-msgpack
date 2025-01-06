@@ -15,7 +15,7 @@ Release:	1
 License:	Apache v2.0
 Group:		Development/Languages/Python
 Source0:	https://files.pythonhosted.org/packages/source/m/msgpack/%{module}-%{version}.tar.gz
-# Source0-md5:	5e35e030329b19811e73c1afac412ffe
+# Source0-md5:	da12a9f0a65a803ec005219f6095d0a3
 URL:		http://msgpack.org/
 BuildRequires:	libstdc++-devel
 BuildRequires:	rpm-pythonprov
