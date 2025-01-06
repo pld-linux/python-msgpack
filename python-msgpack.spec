@@ -9,13 +9,13 @@
 Summary:	Binary-based efficient data interchange format
 Summary(pl.UTF-8):	Binarny, efektywny format wymiany danych
 Name:		python-%{module}
-# keep 1.0.2 here for python2 support
-Version:	1.0.2
+# keep 1.0.5 here for python2 support
+Version:	1.0.5
 Release:	1
 License:	Apache v2.0
 Group:		Development/Languages/Python
 Source0:	https://files.pythonhosted.org/packages/source/m/msgpack/%{module}-%{version}.tar.gz
-# Source0-md5:	68d5804254642905ba87ede509e68970
+# Source0-md5:	5e35e030329b19811e73c1afac412ffe
 URL:		http://msgpack.org/
 BuildRequires:	libstdc++-devel
 BuildRequires:	rpm-pythonprov
