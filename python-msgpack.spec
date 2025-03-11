@@ -11,7 +11,7 @@ Summary(pl.UTF-8):	Binarny, efektywny format wymiany danych
 Name:		python-%{module}
 # keep 1.0.5 here for python2 support
 Version:	1.0.5
-Release:	2
+Release:	3
 License:	Apache v2.0
 Group:		Development/Languages/Python
 Source0:	https://files.pythonhosted.org/packages/source/m/msgpack/%{module}-%{version}.tar.gz
