@@ -5,7 +5,6 @@
 %bcond_without	python3 # CPython 3.x module
 
 %define		module		msgpack
-%define		pypi_name	msgpack-python
 Summary:	Binary-based efficient data interchange format
 Summary(pl.UTF-8):	Binarny, efektywny format wymiany danych
 Name:		python-%{module}
@@ -14,9 +13,10 @@ Version:	1.0.5
 Release:	3
 License:	Apache v2.0
 Group:		Development/Languages/Python
+#Source0Download: https://pypi.org/simple/msgpack/
 Source0:	https://files.pythonhosted.org/packages/source/m/msgpack/%{module}-%{version}.tar.gz
 # Source0-md5:	da12a9f0a65a803ec005219f6095d0a3
-URL:		http://msgpack.org/
+URL:		https://msgpack.org/
 BuildRequires:	libstdc++-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
