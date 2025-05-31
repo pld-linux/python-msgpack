@@ -21,17 +21,18 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	rpm-pythonprov
 BuildRequires:	rpmbuild(macros) >= 1.714
 %if %{with python2}
+BuildRequires:	python-Cython >= 0.29.30
 BuildRequires:	python-modules >= 1:2.7
-BuildRequires:	python-setuptools
+BuildRequires:	python-setuptools >= 1:35.0.2
 %if %{with tests}
 BuildRequires:	python-pytest
 %endif
 %endif
 %if %{with python3}
-BuildRequires:	python3-Cython
+BuildRequires:	python3-Cython >= 0.29.30
 BuildRequires:	python3-devel >= 1:3.5
-BuildRequires:	python3-modules
-BuildRequires:	python3-setuptools
+BuildRequires:	python3-modules >= 1:3.5
+BuildRequires:	python3-setuptools >= 1:35.0.2
 %if %{with tests}
 BuildRequires:	python3-pytest
 %endif
